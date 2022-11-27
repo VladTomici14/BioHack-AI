@@ -1,1 +1,2 @@
-# UniHack 2022
+# BioHack - AI integration
+

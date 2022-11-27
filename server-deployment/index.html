@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing the deployment</title>
+</head>
+
+<body>
+    <script>
+        console.log("started the website...")
+
+        document.getElementById("insert-btn").onclick = function () {
+            const val = document.getElementById("imageName").value;
+            const source = val
+            let imageTag = document.createElement("img");
+            imageTag.src = source;
+            document.body.appendChild(imageTag);
+        }
+
+        async function loadModel() {
+            const model = await tf.loadLayersModel('model_birds.json');
+            model.predict()
+        }
+        loadModel()
+    </script>
+
+    <div>
+        <input type="text" value="helloworld" id="imageName"/>
+        <input type="button" id="insert-btn" value="Insert" />
+    </div>
+
+</body>
