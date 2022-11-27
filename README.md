@@ -1,3 +1,3 @@
 # BioShare 
 
-(check the machine-learning branch)
+(check the machine-learning-detection branch)
