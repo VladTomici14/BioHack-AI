@@ -35,7 +35,7 @@ class Trainer:
         model = Model(inputs=base_model.input, outputs=x)
 
         # --------- plotting the model layers ---------
-        keras.utils.plot_model(model, "../docs/model_layers_reptiles.png", True)
+        keras.utils.plot_model(model, "docs/model_layers_reptiles.png", True)
 
         # ----------- compiling the model -----------
         model.compile(loss="categorical_crossentropy",
@@ -103,7 +103,7 @@ class Trainer:
         )
 
         history = model.fit(train_generator,
-                            epochs=30,
+                            epochs=60,
                             validation_data=validation_generator,
                             callbacks=self.return_callbacks())
 
@@ -112,12 +112,7 @@ class Trainer:
 
 
 def main():
-    # -------- configuring the argparser --------
-    ap = argparse.ArgumentParser()
-    ap.add_argument("-d", "--dataset", required=False, default="animals-10/raw-img", help="path of the dataset")
-    args = ap.parse_args()
-
-    Trainer().train("animals-10/reptiles")
+    Trainer().train("reptiles/dataset")
 
 
 if __name__ == "__main__":
