@@ -10,8 +10,8 @@ from utils.utils import Utils
 
 # ------- reading the classes from the training directory -------
 classes = []
-for x in os.listdir("animals-10/reptiles"):
-    if os.path.isdir(f"animals-10/reptiles/{x}"):
+for x in os.listdir("reptiles/dataset"):
+    if os.path.isdir(f"reptiles/dataset/{x}"):
         classes.append(x)
 
 
@@ -83,9 +83,7 @@ def apply_tflite_model_to_img(img_path, model_path):
 
 
 def main():
-    # apply_model_to_img("frog.jpg")
-
-    apply_tflite_model_to_img("dodo.jpeg", "../models/lite-model_aiy_vision_classifier_birds_V1_3.tflite")
+    apply_model_to_img("reptiles/dataset/chameleon/chameleon-424291__340.jpg")
 
 if __name__ == "__main__":
     main()
