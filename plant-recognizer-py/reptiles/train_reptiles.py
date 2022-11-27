@@ -1,12 +1,11 @@
-import numpy as np
 import warnings
 import argparse
 
-from utils import Utils, Plotting
+from utils.utils import Utils, Plotting
 
 from keras.preprocessing.image import ImageDataGenerator
-from keras.models import Sequential, Model, load_model
-from keras.layers import Dropout, Flatten, Dense, GlobalAveragePooling2D
+from keras.models import Model
+from keras.layers import Dense, GlobalAveragePooling2D
 from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
 import keras.applications
 import keras.utils
